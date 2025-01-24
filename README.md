@@ -62,3 +62,9 @@ No wireshark é possível visualizar as labels a levarem pop.
 mininet> h3 ping h4 -c 1
 mininet> pingall
 ```
+
+Para visualizar as entradas nas tabelas , as ações e outras componentes a serem executadas.
+Por exemplo para o router 1  (Port 9090)
+```bash
+     sudo ./tools/nanomsg_client.py --thrift-port 9090
+```
