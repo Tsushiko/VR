@@ -7,6 +7,7 @@
 - Encaminhamento através de labels (MSLP).
   - R1 e R4 definem os túneis e colocam as labels para os saltos do túnel escolhido nos flows.
   - Todos os routers dão pop da label que se encontra no topo da stack e reencaminham conforme essa label removida.
+  - R1 e R4 removem não só a label final como removem o número de labels e reencaminham o pacote para os hosts da subrede dele após alterar o pacote para o tipo IPV4 (voltando então o pacote ao estado original).
 - Estrutura do pacote:
   |dstAdr|srcAdr|Type|NLabels|Label1| .... |IPV4|
   |------|------|----|-------|------|------|----|
