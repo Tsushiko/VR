@@ -33,7 +33,7 @@
 
 ## Topologia
      h1   h2  h3
-       \  | /
+       \ | /
         s1
          |
         r1
