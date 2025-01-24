@@ -7,8 +7,8 @@
 - Encaminhamento através de labels (MSLP).
   
 - Estrutura do pacote:
-  - |------|------|----|-------|------|----|----|
-    |dstAdr|srcAdr|Type|NLabels|Label1|....|IPV4|
+  |dstAdr|srcAdr|Type|NLabels|Label1|....|IPV4|
+  |------|------|----|-------|------|----|----|
   - dstAdr, srcAdr e Type fazem parte da header do Ethernet
   - Type:
     - 0x8000 - IPV4
