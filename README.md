@@ -93,8 +93,8 @@ mininet> h3 ping h4 -c 1
 mininet> pingall
 ```
 
-Para visualizar as entradas nas tabelas , as ações e outras componentes a serem executadas.
+Para visualizar as entradas nas tabelas , as ações e outras componentes a serem executadas, podemos fazer o seguinte comando.
 Por exemplo para o router 1  (Port 9090)
 ```bash
-     sudo ./tools/nanomsg_client.py --thrift-port 9090
+sudo ./tools/nanomsg_client.py --thrift-port 9090
 ```
