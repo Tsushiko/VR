@@ -5,7 +5,8 @@
   - 0 representa túnel 1 (R1-R2-R3-R4)  ou  (R4-R2-R3-R1)
   - 1 representa túnel 2 (R1-R6-R5-R4)  ou  (R4-R5-R6-R1)
 - Encaminhamento através de labels (MSLP).
-  
+  - R1 e R4 definem os túneis e colocam as labels para os saltos do túnel escolhido nos flows.
+  - Todos os routers dão pop da label que se encontra no topo da stack e reencaminham conforme essa label removida.
 - Estrutura do pacote:
   |dstAdr|srcAdr|Type|NLabels|Label1| .... |IPV4|
   |------|------|----|-------|------|------|----|
@@ -13,8 +14,8 @@
   - Type:
     - 0x8000 - IPV4
     - 0x88B5 - MSLP
-  - Nlabels, é o número de labels no pacote.
-  - A nível do código, as labels são representadas por uma stack de labels.
+  - Nlabels, é o número de labels no pacote (8 bits).
+  - A nível do código, as labels são representadas por uma stack de labels (Cada label tem tamanho de 16 bits).
 
 - Os tunéis são bidirecionais, e todos os hosts podem pingar os outros.
   - A distribuição de host por túnel está 50/50.
@@ -26,4 +27,5 @@
   - h4 - h3 ---> túnel 1
 
 - Não usamos hash para a decisão do túnel.
+- 
 - Não implementamos a firewall.
