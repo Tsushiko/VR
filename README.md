@@ -43,4 +43,22 @@
 | r5       | r5-eth1 (to r6)      | aa:00:00:00:05:01   | N/A                |        |
 | r5       | r5-eth2 (to r4)      | aa:00:00:00:05:02   | N/A                |        |
 
-### ...
+### Compilar P4 
+```bash
+p4c-bm2-ss --std p4-16  p4/l2switch.p4 -o json/l2switch.json
+p4c-bm2-ss --std p4-16  p4/l3switchr1.p4 -o json/l3switchr1.json
+p4c-bm2-ss --std p4-16  p4/l3switchrmeio.p4 -o json/l3switchrmeio.json
+p4c-bm2-ss --std p4-16  p4/l3switchr4.p4 -o json/l3switchr4.json
+```
+
+### Executar
+```bash
+sudo python3 mininet/topo.py --jsonr1 json/l3switchr1.json --jsonS json/l2switch.json --jsonr4 json/l3switchr4.json --jsonrmeio json/l3switchrmeio.json
+```
+
+### Testar
+No wireshark é possível visualizar as labels a levarem pop.
+```bash
+mininet> h3 ping h4 -c 1
+mininet> pingall
+```
