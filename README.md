@@ -1,7 +1,7 @@
 # Projeto de Virtualização de Redes
 
 ## Task Overview 
-- Os tuneis são decididos através do ip dos hosts, alterar nos flows a escolha.
+- Os tuneis são decididos por hash através dos endereços de IP de source e destino.
   - 0 representa túnel 1 (R1-R2-R3-R4)  ou  (R4-R2-R3-R1)
   - 1 representa túnel 2 (R1-R6-R5-R4)  ou  (R4-R5-R6-R1)
 - Encaminhamento através de labels (MSLP).
@@ -19,11 +19,11 @@
   - A nível do código, as labels são representadas por uma stack de labels (Cada label tem tamanho de 16 bits).
 
 - Os tunéis são bidirecionais, e todos os hosts podem pingar os outros.
-  - h1 - h4 ---> Decidido por hash através dos endereços de IP.
+  - h1 - h4 ---> Hash
   - h4 - h1 ---> túnel 2
-  - h2 - h4 ---> Decidido por hash através dos endereços de IP.
+  - h2 - h4 ---> Hash
   - h4 - h2 ---> túnel 1
-  - h3 - h4 ---> Decidido por hash através dos endereços de IP.
+  - h3 - h4 ---> Hash
   - h4 - h3 ---> túnel 1
   
 - Não implementamos a firewall.
