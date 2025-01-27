@@ -25,6 +25,7 @@
   - h4 - h2 ---> túnel 1
   - h3 - h4 ---> Hash
   - h4 - h3 ---> túnel 1
+    - R4 tem uma predefinição para os tunéis, a escolha é feita tendo em conta o ip destino das mensagens, para alterar a escolha é necessário alterar os flows dele.
   
 - Não implementamos a firewall.
 
