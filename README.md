@@ -19,15 +19,12 @@
   - A nível do código, as labels são representadas por uma stack de labels (Cada label tem tamanho de 16 bits).
 
 - Os tunéis são bidirecionais, e todos os hosts podem pingar os outros.
-  - A distribuição de host por túnel está 50/50.
-  - h1 - h4 ---> túnel 1
+  - h1 - h4 ---> Decidido por hash através dos endereços de IP.
   - h4 - h1 ---> túnel 2
-  - h2 - h4 ---> túnel 2
+  - h2 - h4 ---> Decidido por hash através dos endereços de IP.
   - h4 - h2 ---> túnel 1
-  - h3 - h4 ---> túnel 2
+  - h3 - h4 ---> Decidido por hash através dos endereços de IP.
   - h4 - h3 ---> túnel 1
-
-- Não usamos hash para a decisão do túnel.
   
 - Não implementamos a firewall.
 
